@@ -401,3 +401,7 @@ async def upload_file(file: UploadFile = File(...), user_id: str = Form(...)):
 @app.get("/download/{filename}")
 def download_pdf(filename: str):
     return FileResponse(f"./{filename}", media_type='application/pdf', filename=filename)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
